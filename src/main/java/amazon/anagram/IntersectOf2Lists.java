@@ -23,7 +23,7 @@ public class IntersectOf2Lists {
 
         //OPTION 2 - MAP ( time complexity O(2N) space complexity O(n) )
         System.out.println(" Option 2 Way : ");
-        HashMap<String, Integer> nameAndCountMap = new HashMap<>();
+        HashMap<String, Integer> nameAndCountMap = new HashMap<String, Integer>();
         for (String name : listJunk) {
             Integer count = nameAndCountMap.get(name);
             if (count == null) {

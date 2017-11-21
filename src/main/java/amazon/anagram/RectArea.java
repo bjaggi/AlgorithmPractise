@@ -13,7 +13,7 @@ public class RectArea
         // Create an empty stack. The stack holds indexes of hist[] array
         // The bars stored in stack are always in increasing order of their
         // heights.
-        Stack<Integer> s = new Stack<>();
+        Stack<Integer> s = new Stack<Integer>();
 
         int max_area = 0; // Initialize max area
         int tp; // To store top of stack
