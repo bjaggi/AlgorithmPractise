@@ -3,11 +3,7 @@ package design.calendarbooking;
 
 import org.junit.Assert;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
-import java.util.Scanner;
+import java.util.*;
 //https://www.youtube.com/watch?v=olK6SWl8UrM&t=1s
 
 public class StartBooking {
@@ -27,23 +23,36 @@ public class StartBooking {
                         new Interval(20, 50)));
 
 
-            Assert.assertTrue(HasConflict(list));
-            Assert.assertFalse(HasConflict(list2));
+
+
+            System.out.println("List="+list+" , has conflicts="+canAttendMeetings(list));
+            System.out.println("List2="+list2+" , has conflicts="+canAttendMeetings(list2));
+
 
         }
 
     //O(NlogN) for sorting, O(N) for checking
-    static boolean  HasConflict(List<Interval> intervals) {
-        if (intervals == null || intervals.size() == 0) return false;
-        //intervals = intervals.OrderBy(x => x.Start).ToList();
 
-        for (int i = 0; i < intervals.size() - 1; i++) {
-            if (IsOverlap(intervals.get(i), intervals.get(i + 1))) {
-                return true;
+    /**
+     * 1. SORT BY START TIME
+     * 2. MAKE SURE END_TIME IS NEVER GREATER THAN NEXT START TIME.
+     * @param intervals
+     * @return
+     */
+    static public boolean canAttendMeetings(List<Interval> intervals) {
+        Collections.sort(intervals, new Comparator<Interval>(){
+            public int compare(Interval a, Interval b){
+                return a.start-b.start;
+            }
+        });
+        for(int i=0; i<intervals.size()-1; i++){
+            if(intervals.get(i).end>intervals.get(i+1).start){ // END_TIME IS NEVER GREATER THAN NEXT START TIME.
+                return false;
             }
         }
-        return false;
+        return true;
     }
+
 
     static boolean IsOverlap(Interval i1, Interval i2) {
         if (i1.start < i2.start) {
@@ -60,6 +69,15 @@ public class StartBooking {
 class Interval{
     int start;
     int end;
+
+    @Override
+    public String toString() {
+        final StringBuffer sb = new StringBuffer("Interval{");
+        sb.append("start=").append(start);
+        sb.append(", end=").append(end);
+        sb.append('}');
+        return sb.toString();
+    }
 
     public Interval(int start, int end) {
         this.start = start;
