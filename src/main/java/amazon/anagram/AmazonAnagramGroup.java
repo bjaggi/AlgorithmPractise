@@ -7,7 +7,7 @@ public class AmazonAnagramGroup {
 
     public static void main(String[] args) {
 
-        List<String> inputList = new ArrayList(Arrays.asList("cat", "dog", "tac", "god", "act"));
+        List<String> inputList = new ArrayList(Arrays.asList("cat", "dog", "tac", "god", "act","ZAA","AAZ","AZA","NIK","nIk"));
         List<List<String>> superList = new ArrayList(new ArrayList());
         Map<String, List<String>> splMap = new HashMap();
 
