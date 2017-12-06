@@ -1,4 +1,4 @@
-package amazon.anagram.sorting;
+package amazin.sorting;
 
 /*
  * Mergesort is a so called divide and conquer algorithm.
@@ -8,7 +8,8 @@ package amazon.anagram.sorting;
  * 4.Once the sorting process of the two collections is finished, the result of the two collections is combined.
  * 5.
 
-
+// https://www.youtube.com/watch?v=KF2j-9iSf4Q
+// always NlogN runtime
 
  */
 public class MergeSort {
