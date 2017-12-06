@@ -1,4 +1,4 @@
-package rbc;
+package robac;
 
 public class SmallestElementInBinaryTree {
 }

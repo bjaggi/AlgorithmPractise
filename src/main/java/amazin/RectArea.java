@@ -1,4 +1,4 @@
-package amazon.anagram;
+package amazin;
 
 //Java program to find maximum rectangular area in linear time
 
