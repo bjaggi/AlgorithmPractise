@@ -1,4 +1,4 @@
-package amazon.anagram;
+package amazin;
 
 import java.util.*;
 
