@@ -1,4 +1,4 @@
-package amazon.anagram;
+package amazin;
 
 // O(n)
 // FOr balanced tree its O(logn)

@@ -1,4 +1,4 @@
-package amazon.anagram.sorting;
+package amazin.sorting;
 
 import java.util.Arrays;
 import java.util.List;

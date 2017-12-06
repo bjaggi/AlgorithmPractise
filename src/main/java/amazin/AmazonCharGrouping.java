@@ -1,4 +1,4 @@
-package amazon.anagram;
+package amazin;
 
 import java.util.HashMap;
 // Big O is O(n)
