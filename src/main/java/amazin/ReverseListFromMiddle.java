@@ -32,7 +32,8 @@ class ListNode
             node6.next = node7;
             node7.next = node8;
 
-            reverseNikitaStyle() ;
+            //reverseNikitaStyle() ;
+            reverse(node1);
 
 
         }
@@ -54,11 +55,7 @@ class ListNode
             while( counterSecondHalf > counterFirstHalf){
                 counterSecondHalf--;
                 System.out.println(list.get(counterSecondHalf ));
-
-
             }
-
-
         }
 
         public static ListNode reverse(ListNode start)
