@@ -10,11 +10,12 @@ import java.util.Set;
 public class LongestSubString {
 
     public static void main(String[] args) {
-       new LongestSubString().longestSubString("abcabcbb");
-       new LongestSubString().longestSubString("abcdbbbeacc");
-       new LongestSubString().longestSubString("bbbbb");
-       new LongestSubString().longestSubString("pwwkew");
+//       new LongestSubString().longestSubString("abcabcbb");
+//       new LongestSubString().longestSubString("abcdbbbeacc");
+//       new LongestSubString().longestSubString("bbbbb");
+//       new LongestSubString().longestSubString("pwwkew");
 
+        new LongestSubString().longestSubString2("aaaa");
 
     }
 
@@ -56,28 +57,27 @@ public class LongestSubString {
             return 0;
         }
 
-        Set<Character> set = new HashSet<Character>();
-        Map< String, Integer> map = new HashMap<String, Integer>();
-        int left = 0, right = 0, max =0;
+        int left = 0, right = 0, max = 0;
+        Set<Character> uniqueSet = new HashSet<Character>();
+        //aba
+        while ( right < s.length() ){
 
-        while ( right < s.length()){
-
-            // Expand the window
-            if(!set.contains(s.charAt(right))){
-                set.add(s.charAt(right));
+            // If dup found, reset counter and set
+            //abaa
+            if(uniqueSet.contains(s.charAt(right))){
+                left ++;
+                uniqueSet.remove(s.charAt(right));
+            }else {
+                //expand the window
+                uniqueSet.add(s.charAt(right));
                 right ++;
-                max = Math.max(max, right-left);
-            } else {
-                map.put(s.substring(left, right), s.substring(left, right).length());
-                // Shift the window, empty the set
-                set.remove(s.charAt(left));
-                left++;
+               max = Math.max(max , right - left) ;
 
             }
 
+
         }
-        System.out.println(s  + " , "+ s.substring(left,right) + ", lenght : "+ max);
-        System.out.println(map);
+        System.out.println(max);
         return max;
     }
 }

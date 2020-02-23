@@ -18,7 +18,6 @@ public class ImplementQueueWith2Stacks {
         System.out.println(csQueue.dequeue());
         System.out.println(csQueue.dequeue());
 
-
     }
 
 }

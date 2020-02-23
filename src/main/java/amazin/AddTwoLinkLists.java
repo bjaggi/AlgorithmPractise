@@ -21,8 +21,8 @@ public class AddTwoLinkLists {
         bHead.next = new Node(2);
         bHead.next.next = new Node(6);
 
-        printLinkList(add2List(aHead, bHead));
-
+        //printLinkList(add2List(aHead, bHead));
+        printLinkList(add2List2(aHead, bHead));
 
         System.out.println();
 
@@ -32,7 +32,7 @@ public class AddTwoLinkLists {
         Node bHead2 = new Node(5);
         bHead2.next = new Node(2);
 
-        printLinkList(add2List(aHead2, bHead2));
+        //printLinkList(add2List(aHead2, bHead2));
 
     }
 
@@ -75,6 +75,42 @@ public class AddTwoLinkLists {
      return retunNode;
     }
 
+
+    private static Node add2List2(Node aHead, Node bHead) {
+        Node finalList = null, finalListHead = null;
+
+        int carryOver = 0, sum = 0;
+        while( aHead != null || bHead != null){
+            sum = 0;
+            if(aHead != null){
+                sum =sum +  aHead.val;
+                aHead = aHead.next;
+            }
+
+            if(bHead != null){
+                sum = sum +  bHead.val ;
+                bHead = bHead.next;
+            }
+            sum = sum + carryOver;
+            if(finalList == null) {
+                finalList = new Node(sum % 10);
+                finalListHead = finalList;
+            }
+            else{
+                finalList.next = new Node(sum%10);
+                finalList = finalList.next;
+            }
+
+
+            carryOver = sum/10;
+
+        }
+
+        if(carryOver == 1)
+            finalList.next = new Node(1);
+
+        return finalListHead;
+    }
     public static void printLinkList(Node node){
         Node current = node;
         while ( current != null ){

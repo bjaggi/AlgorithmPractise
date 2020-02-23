@@ -7,8 +7,11 @@ public class Fibonacci {
         System.out.println(new Fibonacci().recursiveFibo(i));
 */
 
-        //new Fibonacci().recursiveFibo(5);
-        new Fibonacci().normalFibo(5);
+        System.out.println(new Fibonacci().recursiveFibo(2));
+        System.out.println(new Fibonacci().recursiveFibo(3));
+        System.out.println(new Fibonacci().recursiveFibo(4));
+        System.out.println(new Fibonacci().recursiveFibo(5));
+        //new Fibonacci().normalFibo(5);
     }
 
     public int recursiveFibo(int n){

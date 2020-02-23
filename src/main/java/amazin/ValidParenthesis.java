@@ -41,8 +41,6 @@ public class ValidParenthesis {
 
         }
 
-
-
         return isValid;
     }
 

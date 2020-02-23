@@ -6,7 +6,7 @@ import java.util.Stack;
 
 //https://www.youtube.com/watch?v=bIA8HEEUxZI
 //https://www.youtube.com/watch?v=ZM-sV9zQPEs
-//https://algorithms.tutorialhorizon.com/breadth-first-searchtraversal-in-a-binary-tree/
+//https://algorithms.tutorialhorizon.com/graph-depth-first-traversal/
 public class DepthFirstSearch {
 
     int vertex;

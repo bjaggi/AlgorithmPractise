@@ -7,6 +7,7 @@ package amazin;
 // traversal : udemy
 // https://www.udemy.com/course/learn-data-structure-algorithms-with-java-interview/learn/lecture/12486358#overview
 
+// time and space is o(n) increases for recursion
 public class BinaryTreeAgain {
     BinaryTreeAgain left, right;
     int value;
@@ -31,6 +32,7 @@ public class BinaryTreeAgain {
 
 
     }
+
 
 
 

@@ -9,22 +9,9 @@ import java.util.Queue;
 import java.util.Stack;
 
 // Breadth-First Search/Traversal in a Binary Tree
-public class BreathFirstSearchBinaryTree {
+public class DepthFirstSearchBinaryTree {
 
-    public void levelOrderQueue(Node root) {
-        Queue<Node> q = new LinkedList<Node>();
-        if (root == null)
-            return;
-        q.add(root);
-        while (!q.isEmpty()) {
-            Node n = (Node) q.remove();
-            System.out.print(" " + n.data);
-            if (n.left != null)
-                q.add(n.left);
-            if (n.right != null)
-                q.add(n.right);
-        }
-    }
+
 
 
     public void depthOrderQueue(Node root) {
@@ -42,7 +29,7 @@ public class BreathFirstSearchBinaryTree {
         }
     }
 
-    public static void main(String[] args) throws java.lang.Exception {
+    public static void main(String[] args) throws Exception {
         Node root = new Node(5);
         root.left = new Node(10);
         root.right = new Node(15);
@@ -58,15 +45,6 @@ public class BreathFirstSearchBinaryTree {
         System.out.println("Depth First Search : ");
         i.depthOrderQueue(root);
     }
-}
 
- class Node {
-    int data;
-    Node left;
-    Node right;
-    public Node(int data) {
-        this.data = data;
-        this.left = null;
-        this.right = null;
-    }
+
 }
